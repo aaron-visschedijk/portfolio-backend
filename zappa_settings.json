@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "aws_region": "eu-central-1",
+        "django_settings": "portfolio_backend.settings",
+        "profile_name": "default",
+        "project_name": "portfolio-backend",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-kc88va8rt"
+    }
+}
