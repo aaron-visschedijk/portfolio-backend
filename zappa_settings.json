@@ -5,6 +5,7 @@
         "profile_name": "default",
         "project_name": "portfolio-backend",
         "runtime": "python3.8",
-        "s3_bucket": "zappa-kc88va8rt"
+        "s3_bucket": "zappa-kc88va8rt",
+        "use_precompiled_packages": false
     }
 }
