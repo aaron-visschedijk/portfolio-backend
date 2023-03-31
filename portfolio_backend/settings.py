@@ -128,13 +128,25 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+AWS_S3_REGION_NAME = 'eu-central-1'
+
 # Static files on S3
-YOUR_S3_BUCKET = "django-portfolio-static-files"
+STATIC_S3_BUCKET = "django-portfolio-static-files"
 
 STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
-AWS_S3_BUCKET_NAME_STATIC = YOUR_S3_BUCKET
+AWS_S3_BUCKET_NAME_STATIC = STATIC_S3_BUCKET
 
 # These next two lines will serve the static files directly 
 # from the s3 bucket
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % YOUR_S3_BUCKET
-STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+AWS_S3_CUSTOM_DOMAIN = f'{STATIC_S3_BUCKET}.s3.amazonaws.com'
+STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
+
+# Media files on S3
+MEDIA_S3_BUCKET = "django-portfolio-media-files"
+
+DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
+AWS_S3_BUCKET_NAME = MEDIA_S3_BUCKET
+
+AWS_S3_MEDIA_DOMAIN = f'{MEDIA_S3_BUCKET}.s3.amazonaws.com'
+MEDIA_URL = f"https://{AWS_S3_MEDIA_DOMAIN}/"
+
