@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['4i3qvu8esj.execute-api.eu-central-1.amazonaws.com', 'localhost
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'colorfield',
     'model_extensions.apps.ModelExtensionsConfig',
     'projects.apps.ProjectsConfig',
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -55,6 +58,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+
 
 ROOT_URLCONF = 'portfolio_backend.urls'
 
