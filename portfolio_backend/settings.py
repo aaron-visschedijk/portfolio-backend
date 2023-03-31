@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['4i3qvu8esj.execute-api.eu-central-1.amazonaws.com', 'localhost
 
 INSTALLED_APPS = [
     'projects.apps.ProjectsConfig',
+    'welcome.apps.WelcomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
