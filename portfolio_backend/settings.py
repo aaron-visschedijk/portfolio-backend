@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['4i3qvu8esj.execute-api.eu-central-1.amazonaws.com', 'localhost
 # Application definition
 
 INSTALLED_APPS = [
+    'colorfield',
     'projects.apps.ProjectsConfig',
     'welcome.apps.WelcomeConfig',
     'django.contrib.admin',
