@@ -24,6 +24,8 @@ class Project(models.Model):
     link = models.CharField(max_length=1000, blank=True)
     github = models.CharField(max_length=1000, blank=True)
 
+    hidden = models.BooleanField(default=False)
+
     class Meta:
         ordering = ['title']
 
