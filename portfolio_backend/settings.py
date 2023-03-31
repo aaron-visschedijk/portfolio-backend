@@ -32,8 +32,10 @@ ALLOWED_HOSTS = ['4i3qvu8esj.execute-api.eu-central-1.amazonaws.com', 'localhost
 
 INSTALLED_APPS = [
     'colorfield',
+    'model_extensions.apps.ModelExtensionsConfig',
     'projects.apps.ProjectsConfig',
     'welcome.apps.WelcomeConfig',
+    'about.apps.AboutConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
