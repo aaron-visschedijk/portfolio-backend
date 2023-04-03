@@ -15,13 +15,13 @@ class Tag(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
+    title_long = models.CharField(max_length=1000, blank=True)
     image = models.ImageField(blank=True)
     tags = models.ManyToManyField(Tag, related_name='tags')
-
     date = models.DateField(auto_now=True)
-
-    description = models.CharField(max_length=10000)
+    description = models.TextField()
     link = models.CharField(max_length=1000, blank=True)
+    link_text = models.CharField(max_length=100, blank=True)
     github = models.CharField(max_length=1000, blank=True)
 
     hidden = models.BooleanField(default=False)
