@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-28hlb_fw1y&2@8n#j_*y4tkq0aspy5-^n@euhvtmp-ur7^2_e#'
+SECRET_KEY = os.environ.get('SECRET_KEY', "secret")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = ['4i3qvu8esj.execute-api.eu-central-1.amazonaws.com', 'localhost']
+ALLOWED_HOSTS = ['8mg5xx58kc.execute-api.eu-central-1.amazonaws.com', 'localhost']
 
 
 # Application definition
@@ -60,8 +62,20 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    "http://localhost:3000", 'https://d27wqddjf5ruhp.cloudfront.net', 'https://aaronvisschedijk.com'
 ]
+
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 ROOT_URLCONF = 'portfolio_backend.urls'
